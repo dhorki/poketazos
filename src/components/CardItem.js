@@ -4,7 +4,7 @@ import HighlightableText from "./HighlightableText";
 import PokemonImage from "./PokemonImage";
 import TypeBadge from "./TypeBadge";
 
-const CardItem = ({ name, sprite = "", url, highlight }) => {
+const CardItem = ({ name, sprite = "", url, highlight, typeSearch }) => {
   const [flip, setFlip] = useState(false);
   const { data, loading, error } = useFetch(url);
   const { types, sprites } = data;
@@ -12,9 +12,31 @@ const CardItem = ({ name, sprite = "", url, highlight }) => {
   const firstType = sprites ? types[0].type.name : "normal";
   const typesLen = sprites ? types.length : 0;
 
+  const pokemonHasType = () => {
+    let hasType = false;
+
+    let typesFilter = [];
+
+    const searchTypes = Object.keys(typeSearch);
+
+    searchTypes.forEach((type) => {
+      typeSearch[type] && typesFilter.push(type);
+    });
+
+    // console.log({ types });
+    if (types && typesFilter.length > 0) {
+      types.forEach((type) => {
+        if (typesFilter.includes(type.type.name)) hasType = true;
+      });
+    } else {
+      hasType = true;
+    }
+    return hasType;
+  };
+
   return (
     <div
-      className="card-container"
+      className={`card-container ${pokemonHasType() ? "" : "hide"}`}
       onMouseEnter={() => {
         if (sprites) {
           setFlip(true);

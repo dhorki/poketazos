@@ -9,7 +9,7 @@ export const useFetch = (url) => {
 
   useEffect(() => {
     let controller = new AbortController();
-    console.log(cache);
+    // console.log(cache);
 
     const fetchData = async () => {
       setLoading(true);
