@@ -6,7 +6,7 @@ import "./styles.css";
 
 export default function App() {
   /**  Input state management logic here */
-  const limit = 2000;
+  const limit = 200;
   const allPokemonUrl = "https://pokeapi.co/api/v2/pokemon?limit=" + limit;
   const [search, setSearch] = useState("");
 
