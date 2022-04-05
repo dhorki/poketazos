@@ -124,7 +124,7 @@ div.card-item.back {
   height: 96px; */
   width: 144px;
   height: 144px;
-  image-rendering: pixelated;
+  /* image-rendering: pixelated; */
   /* filter: drop-shadow(15px 5px 2px #8f8f93); */
   filter: drop-shadow(2px 2px 0px #ffffff) drop-shadow(2px -2px 0px #ffffff)
     drop-shadow(-2px 2px 0px #ffffff) drop-shadow(-2px -2px 0px #ffffff)
@@ -238,7 +238,7 @@ button {
   width: 31px;
   height: 30px;
   border-radius: 30px;
-  image-rendering: pixelated;
+  /* image-rendering: pixelated; */
 }
 .normal-badge-bg {
   background-position-x: -61px;
@@ -335,7 +335,7 @@ button {
   position: fixed;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png");
   background-size: 50px;
-  image-rendering: pixelated;
+  /* image-rendering: pixelated; */
   right: 20px;
   bottom: 20px;
 }
